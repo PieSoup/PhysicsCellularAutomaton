@@ -12,7 +12,7 @@ Simple physics simulation to simulate different solid and liquid elements
 **3:** Set element to Stone \
 **4:** Set element to Gravel \
 \
-**X:** Delete Elements \ 
+**X:** Delete Elements
 \
 **Scroll Up:** Increase brush size \
 **Scroll Down:** Decrease brush size
