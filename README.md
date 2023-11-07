@@ -1,10 +1,19 @@
 # PhysicsCellularAutomaton
-Currently this cellular automaton is an implementation of Conway's Game of Life for testing purposes, it will become more of a physics simulation in the future now that the base infrastructure is done
+Simple physics simulation to simulate different solid and liquid elements
 
 ## How to use:
-### Setup:
-Currently the program is setup to spawn a bunch of random noise for testing purposes, but you can also use the left mouse button to draw pixels to the screen
 ### Controls:
 **LMB:** Spawn in new cells at the cursor \
 **Enter:** Run the simulation at 60 simulation steps per second \
-**Right Arrow:** Step the simulation one frame per press
+**Right Arrow:** Step the simulation one frame per press \
+\
+**1:** Set element to Sand \
+**2:** Set element to Water \
+**3:** Set element to Stone \
+**4:** Set element to Gravel \
+\
+**X:** Delete Elements \ 
+\
+**Scroll Up:** Increase brush size \
+**Scroll Down:** Decrease brush size
+
