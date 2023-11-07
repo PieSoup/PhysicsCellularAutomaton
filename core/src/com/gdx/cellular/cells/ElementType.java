@@ -1,6 +1,10 @@
 package com.gdx.cellular.cells;
 
-import com.gdx.cellular.cells.solids.Stone;
+import com.gdx.cellular.cells.solids.ImmovableSolids.Stone;
+import com.gdx.cellular.cells.solids.MoveableSolids.Gravel;
+import com.gdx.cellular.cells.solids.MoveableSolids.Sand;
+import com.gdx.cellular.cells.liquids.Water;
+
 
 // Define an enum called ElementType
 public enum ElementType {
@@ -9,15 +13,33 @@ public enum ElementType {
         // Implement abstract method to create an element of type EmptyCell
         @Override
         public Element createElementByMatrix(int x, int y) {
-            return new EmptyCell(x, y);
+            return EmptyCell.getInstance();
         }
     },
     // Define a constant named STONE with associated class and class type
-    STONE(Stone.class, ClassType.SOLID) {
+    SAND(Sand.class, ClassType.MOVEABLESOLID) {
         // Implement abstract method to create an element of type Stone
         @Override
         public Element createElementByMatrix(int x, int y) {
+            return new Sand(x, y);
+        }
+    },
+    STONE(Stone.class, ClassType.IMMOVEABLESOLID){
+        @Override
+        public Element createElementByMatrix(int x, int y){
             return new Stone(x, y);
+        }
+    },
+    GRAVEL(Gravel.class, ClassType.MOVEABLESOLID){
+        @Override
+        public Element createElementByMatrix(int x, int y){
+            return new Gravel(x, y);
+        }
+    },
+    WATER(Water.class, ClassType.LIQUID){
+        @Override
+        public Element createElementByMatrix(int x, int y){
+            return new Water(x, y);
         }
     };
 
@@ -31,12 +53,19 @@ public enum ElementType {
         this.classType = classType;
     }
 
-    // Declare an abstract method to create an element based on position in a matrix
+    /**
+     * Abstract method to create an element based on position in a matrix
+     * @param x The x position
+     * @param y The y position
+     * @return The element that is created
+     */
     public abstract Element createElementByMatrix(int x, int y);
 
-    // Define an enum for class types (SOLID and EMPTYCELL)
+    // Define an enum for class types
     public enum ClassType {
-        SOLID,
+        MOVEABLESOLID,
+        IMMOVEABLESOLID,
+        LIQUID,
         EMPTYCELL;
     }
 }

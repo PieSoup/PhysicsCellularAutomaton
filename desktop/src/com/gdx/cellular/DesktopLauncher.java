@@ -9,7 +9,7 @@ public class DesktopLauncher {
 		// Make a new lightweight java game library application
 		Lwjgl3ApplicationConfiguration config = new Lwjgl3ApplicationConfiguration();
 		config.setForegroundFPS(60); // Set the FPS
-		config.setTitle("Game of Life"); // Set the title
+		config.setTitle("Physics Sim"); // Set the title
 
 		// Set widowed mode with proper size
 		config.setWindowedMode(CellularAutomaton.getScreenWidth(), CellularAutomaton.getScreenHeight());
